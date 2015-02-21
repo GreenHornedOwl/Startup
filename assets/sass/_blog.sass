@@ -1,36 +1,89 @@
+$accent: #FC4400
 // general
 html 
 	font-size: 1em
+* 
+	box-sizing: border-box 	
 body 
 	background-color: #FFF
 	font-family: "Open Sans", Verdana, sans-serif	
 	font-size: 1em
 	font-weight: 400
-	color: 999
+	color: #333
 	line-height: 1.4
 p
 	margin: 0 0 1em
-
+a
+	display: inline-block
 h1, h2, h3, h4, h5, h6 
 	font-weight: 600
-	margin: 0 0 0.3em
+	margin: 0
 a
-	color: magenta
+	color: $accent
 	text-decoration: none
+	+transition(ease-in,0.2s)
 	&:hover
-		color: cyan
+		color: darken(adjust_hue(#FC4400, 136), 11)
+img
+	+img-responsive() 
 
 //blog
+.article-page 
+	padding: 0px
+
+.category-header 
+	h1
+		border-bottom: 1px solid #FC4400
+		margin: 0.5em 0
+		font-size: 1em
+		padding-bottom: 0.5em
+		color: $accent
+		font-weight: 400
+		text-transform: uppercase
+		+box-shadow(0px 1px 1px #eee)
 .article
+	+make-md-column(8)	
+	h2
+		margin-bottom: 0.2em
+		font-weight: 400
+		font-size: 2.2em
+		line-height: 1.2
 	.date
-		font-size: 0.8em
+		font-size: 1em
+		margin: 0
 		&:before
 			font-family: "FontAwesome"
 			font-weight: 400
 			content: "\f017"
-			margin-right: 0.2em 
-	.tags
+			margin-right: 0.2em
+			color: #ccc
+	.inline
 		font-size: 0.8em
-		margin-bottom: 1em
+		margin-bottom: 0.5em
+		color: #aaa
+		font-weight: 300
 		p
-			margin: 0 0.5em 0 0	
+			margin: 0 0.5em 0 0
+			display: inline
+		a
+			font-weight: 600
+	.header
+		margin-bottom: 1em		
+.article-aside-list 	
+	+make-md-column(4)	
+	font-size: 0.8em
+	.media
+		margin: 0 0 1em		
+	.media-object
+		width: 60px		
+	h4 
+		width: 90%
+		+text-overflow()
+	p
+		margin-bottom: 0
+	a
+		color: #333	
+		&:hover 
+			color: darken(adjust_hue(#FC4400, 136), 11)
+	
+					
