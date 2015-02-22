@@ -4,13 +4,37 @@
 	padding-left: $pad
 	li 
 		float: left
-=v-nav
-	ul	
-		list-style-type: none
+=v-nav	
+	list-style-type: none
+	li
+		float: none	
 =justify-nav
 	ul
 		list-style-type: none
 	li
 		display: table-cell
 =default-input
-	+input-size(".form-control", 1.2em, 0.2em, 0.5em, 1em, 1.4, 0)		
+	+input-size(".form-control", 1.2em, 0.2em, 0.5em, 1em, 1.4, 0)
+	border-width: 1px		
+=nav-level-1 ($bg-color: #fff, $color: $accent, $hover-bg-color: $accent, $hover-color: #fff)
+	display: inline-block
+	padding: 0.2em 1em
+	background-color: $bg-color
+	color: $color
+	&:hover
+		background-color: $hover-bg-color
+		color: $hover-color
+	&.active
+		background-color: $hover-bg-color
+		color: $hover-color
+=nav-level-2 ($bg-color: transparent, $color: $accent, $hover-bg-color: transparent, $hover-color: #fff)
+	display: inline-block
+	padding: 0.2em 1em
+	background-color: $bg-color
+	color: $color
+	&:hover
+		background-color: $hover-bg-color
+		color: $hover-color
+	&.active
+		background-color: $hover-bg-color
+		color: $hover-color	
