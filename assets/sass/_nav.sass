@@ -1,0 +1,29 @@
+.upper
+	+clearfix
+	color: #aaa	
+	ul
+		+h-nav
+		float: left
+	a
+		padding: 0px 0.5em
+		margin: 0.5em 0
+		color: #aaa
+		&:hover
+			color: $accent
+	li:first-child
+		a
+			padding-left: 0
+.middle
+	+clearfix
+	ul
+		+h-nav
+		float: right
+	a
+		padding: 0 0.5em
+		margin: 0.5em 0
+		color: #000
+		&:hover
+			color: darken(adjust_hue($accent, 136), 11)
+	li:last-child
+		a
+			padding-right: 0			
