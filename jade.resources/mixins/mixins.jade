@@ -1,0 +1,20 @@
+mixin contentBox(content, title, buttonText, image)
+	if content == 'banner'
+		a(href='#')
+			if title				
+				img(src='http://placehold.it/#{title}')
+			else
+				img(src='http://placehold.it/370x370')		
+	else
+		if title
+			h3.title
+				a(href='#')= title
+		if image				
+				img(src='http://placehold.it/#{image}')
+			else
+				img(src='http://placehold.it/370x370')		
+		div.content
+			if block
+				block
+		if buttonText
+			a.button(href='#')= buttonText

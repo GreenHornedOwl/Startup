@@ -15,7 +15,40 @@
 		display: table-cell
 =default-input
 	+input-size(".form-control", 1.2em, 0.2em, 0.5em, 1em, 1.4, 0)
-	border-width: 1px		
+	border-width: 1px
+
+
+=box-normal
+	img
+		margin-bottom: 1em
+=box-img-only($title: title, $button: button, $spacing: $spacing)	
+	position: relative
+	+clearfix
+	img
+		margin: 0px
+		padding: 0px
+	@if $title == title
+		.title
+			position: absolute
+			top: 0px
+			left: 0px
+			width: 100%
+			padding: $spacing 2*$spacing
+	@if $button == button
+		.button
+			position: absolute
+			bottom: $spacing
+			left: 2*$spacing
+			
+
+
+
+
+		
+
+
+
+
 =nav-level-1 ($bg-color: #fff, $color: $accent, $hover-bg-color: $accent, $hover-color: #fff)
 	display: inline-block
 	padding: 0.2em 1em
