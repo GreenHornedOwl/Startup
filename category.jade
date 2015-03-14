@@ -1,0 +1,30 @@
+extend jade.resources/layout/master
+
+block content	
+	.container		
+		.category-page		
+			h1.block-header.category-header Men clothing
+			.aside-category
+				p.block-header Filter				
+				.manufacturer.filter-aside
+					p.filter-header Manufacturer
+					ul
+						for brand in brands.brands
+							li
+								a(href='#') #{brand}
+				.brands.filter-aside
+					p.filter-header Brands
+					ul
+						for brand in brands.brands
+							li
+								a(href='#') #{brand}
+				.colors.filter-aside
+					p.filter-header Colors
+					ul
+						for color in colors.colors
+							li
+								a(href='#' style='background-color:#{color}') #{color}													
+				a(href="#" class='cancel-filters') Cancel filters
+			.main								
+				.product-list					
+					+product-list()

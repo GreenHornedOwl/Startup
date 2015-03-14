@@ -18,3 +18,18 @@ mixin contentBox(content, title, buttonText, image)
 				block
 		if buttonText
 			a.button(href='#')= buttonText
+
+mixin product-list()
+	for product in products
+		.item
+			.product-box
+				a(href='#')
+					img(src='http://placehold.it/370x370/FAFAFA/000000' class='product-image img-responsive')
+					span.product-title #{product.name} 
+					span.product-price #{product.promo} <sup> RON </sup>
+					span.product-old-price #{product.price} <sup> RON </sup>
+					span.product-button Adauga in cos
+mixin filter-size()
+	for product in products
+		li
+			a(href='#') #{product.size}					
