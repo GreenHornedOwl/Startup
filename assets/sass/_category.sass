@@ -1,9 +1,10 @@
 .category-page
 	+make-row()
+	.category-banner
+		margin-top: 1em
+		padding: 0px $spacing
 	.category-header
 		margin: 0px $spacing $spacing
-		font-size: 2.4em
-		text-align: center
 		font-weight: 300
 		text-transform: uppercase
 	.aside-category
@@ -20,6 +21,34 @@
 				+make-sm-column(4)
 				+make-md-column(3)
 				+make-lg-column(2,10)
+.filter-aside
+	font-size: 0.8em
+	margin-bottom: 1em
+	a		
+		color: #000	
+		&:hover
+			color: magenta
+	.filter-header	
+		margin-bottom: 0
+		font-weight: 600
+		&:before
+			font-family: "FontAwesome"
+			content: "\f105"
+			margin-right: 0.2em
+			color: magenta
+.cancel-filters
+	font-size: 0.8em	
+	font-weight: 300
+	color: gray
+	border-top: 1px solid #eee
+	padding-top: 0.2em
+	display: block
+	&:after
+		font-family: "FontAwesome"
+		content: "\f00d"
+		margin-left: 0.5em
+	&:hover
+		color: red
 .manufacturer
 	ul
 		+h-nav()
@@ -38,25 +67,6 @@
 		display: block
 		padding: 0.2em
 		text-align: center
-		margin-bottom: $spacing		
-.filter-aside
-	font-size: 0.8em
-	margin-bottom: 1em
-	a		
-		color: #000	
-	.filter-header	
-		margin-bottom: 0
-		font-weight: 700
-.cancel-filters
-	font-size: 0.8em	
-	font-weight: 300
-	color: gray
-	border-top: 1px solid #eee
-	padding-top: 0.2em
-	display: block
-	&:after
-		font-family: "FontAwesome"
-		content: "\f00d"
-		margin-left: 0.5em
-	&:hover
-		color: red		
+		margin-bottom: $spacing
+		&:hover
+			color: #000		
