@@ -2,32 +2,48 @@ extend jade.resources/layout/master
 
 block content
 	.container
-		.category-page
+		.category-page			
 			.category-banner
 				a(href='#')
 					img(src='http://placehold.it/1200x300/FAFAFA/000000')
-			h1.block-header.category-header Men clothing
-			.aside-category
-				p.block-header Filter				
-				.filter-aside.manufacturer
-					p.filter-header Manufacturer
-					ul
-						for brand in brands.brands
-							li
-								a(href='#') #{brand}
-				.filter-aside.brands
-					p.filter-header Brands
-					ul
-						for brand in brands.brands
-							li
-								a(href='#') #{brand}
-				.filter-aside.colors
-					p.filter-header Colors
-					ul
-						for color in colors.colors
-							li
-								a(href='#' style='background-color:#{color}') #{color}													
-				a(href="#" class='cancel-filters') Cancel filters
+			.breadcrumbs
+				ul
+					li 
+						a(href='#') Home
+					li
+						a(href='#') Womanswear
+					li
+						a(href='#') Lingerie			
+			h1.block-header.category-header Women clothing
+			.aside-category.filter-vertical
+				p.block-header.filter-header Filter
+				ul.filter-list
+					li.filter-item.manufacturer
+						p.filter-title Manufacturer
+						ul
+							for brand in brands.brands
+								li
+									a(href='#') #{brand}
+					li.filter-item.brands
+						p.filter-title Brands
+						ul
+							for brand in brands.brands
+								li
+									a(href='#') #{brand}
+					li.filter-item.colors
+						p.filter-title Colors
+						ul
+							for color in colors.colors
+								li
+									a(href='#' style='background-color:#{color}') #{color}
+					li.filter-item.summerwear
+						p.filter-title Summer Wear 
+						ul
+							for brand in brands.brands
+								li
+									a(href='#') #{brand}
+					li																		
+						a(href="#" class='cancel-filters') Cancel filters
 			.main								
 				.product-list					
-					+product-list()
+					+product-list(32)

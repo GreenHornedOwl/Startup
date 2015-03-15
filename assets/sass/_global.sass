@@ -16,4 +16,23 @@
 	// text-transform: uppercase
 
 .aside
-	+make-sm-column(2)
+	+make-sm-column(4)
+	+make-md-column(2)
+.breadcrumbs
+	padding: 0px $spacing
+	ul
+		+h-nav
+		a
+			color: #000
+			&:hover
+				color: magenta
+		li 
+			font-size: 0.8em
+			font-weight: 400
+			&:after
+				content: "/"
+				margin-left: 5px
+				margin-right: 5px
+				font-weight: 700
+			&:last-child:after
+				content: ""	
