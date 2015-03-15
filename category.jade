@@ -44,6 +44,50 @@ block content
 									a(href='#') #{brand}
 					li																		
 						a(href="#" class='cancel-filters') Cancel filters
-			.main								
+			.main		
+				.sort-block
+					p 30 Products Found
+					.view
+						p View
+						a(href='#' class='active') 50
+						a(href='#') All
+					.pagination
+						ul
+							li.active
+								a(href='#') 1
+							li
+								a(href='#') 2
+							li
+								a(href='#') 3
+							li
+								a(href='#') 4
+							li
+								a(href='#') Next		
+					.sort
+						select(class='form-control')
+							each sortItem, i in sort.sort
+								option(value=i) #{sortItem}								
 				.product-list					
 					+product-list(32)
+				.sort-block
+					p 30 Products Found
+					.view
+						p View
+						a(href='#' class='active') 50
+						a(href='#') All
+					.pagination
+						ul
+							li.active
+								a(href='#') 1
+							li
+								a(href='#') 2
+							li
+								a(href='#') 3
+							li
+								a(href='#') 4
+							li
+								a(href='#') Next		
+					.sort
+						select(class='form-control')
+							each sortItem, i in sort.sort
+								option(value=i) #{sortItem}		
