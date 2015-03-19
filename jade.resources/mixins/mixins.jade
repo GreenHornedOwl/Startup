@@ -35,4 +35,24 @@ mixin product-list(arg)
 mixin filter-size()
 	for product in products
 		li
-			a(href='#') #{product.size}					
+			a(href='#') #{product.size}
+mixin variant-size()
+	for variant in variantSize.size
+		li 			
+			a(href='#' data-role='variant') #{variant}
+mixin variant-color()
+	select
+		for variant in variantColor.color
+			option(value='#{variant}') #{variant}				
+mixin variant()
+	for item in variant.color
+		li 			
+			a(href='#' data-role='variant') #{item}
+mixin related()
+	for item in relatedProducts.related
+		.related-item
+			a(href='#')
+				img(src='http://placehold.it/300x300/FAFAFA/000000')
+				span #{item}
+
+	
