@@ -42,6 +42,7 @@
 			font-size: 0.8em
 		.product-title
 			font-weight: 300
+			color: $blue
 		.product-code
 			color: #ddd
 		.product-info-secondary
@@ -62,8 +63,8 @@
 		.product-info-main
 			margin-bottom: $spacing		
 		.product-options
-			padding: $spacing
-			border: 1px solid #ddd
+			// padding: $spacing
+			// border: 1px solid #ddd
 		.price
 			font-size: 2em
 			line-height: 1em
@@ -72,21 +73,11 @@
 				top: -1em		
 		.old-price
 			text-decoration: line-through
-			color: #ddd		
-	.extras
-		li
-			max-width: 20%
-			padding-right: $spacing
-		ul
-			+h-nav
-			display: none
-		p
-			margin-top: 0.5em
-			span
-				font-weight: 600	
-		a
-			color: #000
-			text-decoration: underline		
+			color: #ddd	
+	.variant-select
+		select 
+			font-size: 0.8em	
+			border: 1px solid #000
 	.variant-container	
 		padding: 0.8em 0
 		border-bottom: 1px dotted #ddd
@@ -96,7 +87,27 @@
 			border-bottom: none
 			padding-bottom: 0.3em	
 		p 
-			margin-bottom: 0.3em		
+			margin-bottom: 0.3em
+			font-weight: 700
+			font-size: 0.8em
+			text-transform: uppercase
+	.extras
+		li
+			max-width: 20%
+			padding-right: $spacing
+		ul
+			+h-nav
+			display: none
+		p
+			margin-top: 0.5em
+			font-weight: 400
+			margin: 0
+			text-transform: none
+			span
+				font-weight: 600	
+		a
+			color: #000
+			text-decoration: underline			
 .variant-box
 	ul
 		+h-nav
@@ -106,22 +117,37 @@
 		text-align: center
 		margin-right: 0.5em
 		color: #000
+		font-size: 0.8em
 .add-to-basket
-	background-color: green	
-	+background-image(linear-gradient(#d4e65c, #b5c54a))
-	padding: 0.3em 0.8em
-	border: 1px solid #b5c54a
+	background-color: $red
+	padding: 0 0.8em
+	line-height: 2em
+	// border: 1px solid #b5c54a
 	color: #fff
 	+transition(all 0.2s ease-in)
-	&:hover
-		+background-image(linear-gradient(#b5c54a, #d4e65c))
+	&:before		
+		+transition(all 0.2s ease-in)
+		content: "+"
+		font-weight: 300
+		margin-right: 0.5em
+		font-size: 1.4em
+		float: left
+		display: block
+	&:hover		
 		color: #fff
+		background-color: $blue
+		&:before
+			transform: scale(1.8)
+			// color: $red
 .submit-order
 	p
 		display: inline-block
 		margin-right: 0.3em
 	input		
-		max-width: 2.8em
+		max-width: 3.8em
+		font-size: 0.8em
+		border: 1px solid #000
+		padding: 0.2em 0.5em
 	a 
 		margin-right: 0.3em	
 .product-related-list
