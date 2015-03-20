@@ -28,17 +28,20 @@
 		a
 			padding-right: 0
 .main-nav	
-	border-bottom: 1px solid #eee
+	// border-bottom: 2px solid $blue
 	position: relative
 	z-index: 2
-	margin-bottom: $spacing
+	background-color: $blue
+	+make-row   //SWITCH
 	ul
 		+h-nav
 		position: relative
 	a
-		+nav-level-1(#fff,#000,#fff,magenta)
-		font-weight: 300
+		+nav-level-1($blue,#fff,$red,#fff)
+		font-weight: 400
 		text-transform: uppercase
+		// &.active 
+		// 	color: #000
 	.dropdown		
 		a:after
 			font-family: "FontAwesome"
