@@ -12,6 +12,8 @@
 			+make-md-column(12)
 			+make-lg-column(2)			
 			padding: 0
+			a
+				border: 1px solid #eee
 			@media (min-width: $screen-md-min)
 				float: left
 			@media (max-width: $screen-lg-min)
@@ -23,14 +25,18 @@
 		.main-image
 			+make-sm-column(10)
 			+make-md-column(12)
-			+make-lg-column(10)					
+			+make-lg-column(10)
 			padding-right: 0
 			margin-bottom: $spacing
+			// img 
+			// 	box-shadow: 0px 0px 6px #ddd
+			// 	border: 1px solid #00bed4	
 			@media (min-width: $screen-md-min)
 				float: right
 			@media (max-width: $screen-lg-min)
 				padding-right: $spacing
 				padding: 0
+					
 	.product-related-list
 		+make-sm-column(12)
 		+make-md-column(2)
@@ -78,6 +84,11 @@
 		select 
 			font-size: 0.8em	
 			border: 1px solid #000
+			// background-color: $blue
+			// border-color: scale-lightness($blue, -20)
+			// outline: none
+			// font-weight: 600
+			// color: #fff
 	.variant-container	
 		padding: 0.8em 0
 		border-bottom: 1px dotted #ddd
@@ -118,6 +129,26 @@
 		margin-right: 0.5em
 		color: #000
 		font-size: 0.8em
+		&:hover
+			background-color: $blue
+			border-color: scale-lightness($blue, -20)
+			color: #fff
+			position: relative
+			font-weight: 600
+		&[data-pick="checked"]
+			background-color: $blue
+			border-color: scale-lightness($blue, -20)
+			color: #fff
+			position: relative
+			font-weight: 600
+			&:after			
+				font-family: "FontAwesome"
+				content: "\f00c"
+				font-weight: 400
+				position: absolute
+				font-size: 0.7em
+				margin-left: 0.3em
+				color: scale-lightness($blue, -20)
 .add-to-basket
 	background-color: $red
 	padding: 0 0.8em
@@ -151,6 +182,7 @@
 	a 
 		margin-right: 0.3em	
 .product-related-list
+	padding-top: $spacing
 	p 
 		font-style: italic
 		text-align: center
@@ -174,3 +206,6 @@
 		h3
 			font-size: 1.8em
 			font-weight: 300
+.product-recommended
+	.item 
+		+make-sm-column(2,10)	

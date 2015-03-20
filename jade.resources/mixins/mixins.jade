@@ -27,19 +27,25 @@ mixin product-list(arg)
 			.item
 				.product-box
 					a(href='product.html')
-						img(src='http://placehold.it/370x370/FAFAFA/000000' class='product-image img-responsive')
-						span.product-title #{product.name} 
-						span.product-price #{product.promo} <sup> RON </sup>
-						span.product-old-price #{product.price} <sup> RON </sup>
-						span.product-button= cta
+						img(src='http://placehold.it/370x370/FAFAFA/000000' class='product-item-image img-responsive')
+						span.product-item-title #{product.name} 
+						span.product-item-price #{product.promo} <sup> RON </sup>
+						span.product-item-old-price #{product.price} <sup> RON </sup>
+						span.product-item-button= cta
 mixin filter-size()
 	for product in products
 		li
 			a(href='#') #{product.size}
-mixin variant-size()
+mixin variant-size(arg)
+	-var i=0
 	for variant in variantSize.size
-		li 			
-			a(href='#' data-role='variant') #{variant}
+		-i=i+1		
+		li
+			if (i==arg)
+				a(href='#' data-role='variant' data-pick="checked") #{variant}
+			else
+				a(href='#' data-role='variant') #{variant}
+					
 mixin variant-color()
 	select
 		for variant in variantColor.color
