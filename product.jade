@@ -34,19 +34,25 @@ block content
 						a(href='#' class='') View Manufacturer Page
 					.product-options
 						.variant-container.variant-box
-							p 1. Pick a size
-							ul
-								+variant-size(2)
+							.variant-content
+								p 1. Pick a size							
+								+variant-size()
+						.variant-container.variant-box
+							.variant-content
+								p 1. Pick a season							
+								+variant-season()
 						.variant-container.variant-select
-							p 2. Pick a color
-							ul
+							.variant-content
+								p 2. Pick a color
 								+variant-color()
 						.variant-container.submit-order
-							p 3.
-							a(href='#' class='add-to-basket') Add to basket
-							p QTY:
-								input(type='number' value='1')
-						.variant-container.extras
+							.variant-content
+								.variant-selector(data-role='variant-selector' data-priority='99' data-tooltip='Please fill in the options')
+									p 3.
+									button(class='add-to-basket' data-value='' data-role='submit') Add to basket
+									p QTY:
+										input(type='number' value='1')
+						.extras
 							ul
 								li
 									+contentBox("banner","300x300/FAFAFA/000000")

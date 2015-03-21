@@ -38,18 +38,36 @@ mixin filter-size()
 			a(href='#') #{product.size}
 mixin variant-size(arg)
 	-var i=0
-	for variant in variantSize.size
-		-i=i+1		
-		li
-			if (i==arg)
-				a(href='#' data-role='variant' data-pick="checked") #{variant}
-			else
-				a(href='#' data-role='variant') #{variant}
-					
+	.variant-selector(data-role='variant-selector' data-priority='0' data-tooltip='Please select a size')
+		ul
+			for variant in variantSize.size
+				-i=i+1		
+				li
+					if (i==arg)
+						a(href='#' data-role='variant' data-value="#{variant}" data-pick="1") #{variant}
+					else
+						a(href='#' data-role='variant' data-value="#{variant}" data-pick="0") #{variant}
+mixin variant-season(arg)
+	-var i=0
+	.variant-selector(data-role='variant-selector' data-priority='0' data-tooltip='Please select a size')
+		ul
+			for variant in variantSeason.season
+				-i=i+1		
+				li
+					if (i==arg)
+						a(href='#' data-role='variant' data-value="#{variant}" data-pick="1") #{variant}
+					else
+						a(href='#' data-role='variant' data-value="#{variant}" data-pick="0") #{variant}					
 mixin variant-color()
-	select
-		for variant in variantColor.color
-			option(value='#{variant}') #{variant}				
+	-var i = 0
+	.variant-selector(data-role='variant-selector' data-priority='0' data-tooltip='Please select a season')
+		select(data-role='variant' data-priority='0' data-pick="0")
+			for variant in variantColor.color
+				-i=i+1	
+				if (i==1)
+					option(value='#{variant}' disabled selected) #{variant}
+				else
+					option(value='#{variant}') #{variant}
 mixin variant()
 	for item in variant.color
 		li 			
