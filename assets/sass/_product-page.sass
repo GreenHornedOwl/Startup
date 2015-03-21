@@ -6,7 +6,7 @@
 		padding: 0
 		padding-top: $spacing
 	.product-image
-		+make-sm-column(6)		
+		+make-sm-column(7)		
 		.thumbnails
 			+make-sm-column(2)
 			+make-md-column(12)
@@ -42,7 +42,7 @@
 		+make-md-column(2)
 		+make-lg-column(2)	
 	.product-content
-		+make-sm-column(6)		
+		+make-sm-column(5)		
 		p
 			margin-bottom: 0
 			font-size: 0.8em
@@ -53,7 +53,7 @@
 			color: #ddd
 		.product-info-secondary
 			// padding: 0px 0px $spacing/2
-			border-bottom: 1px solid #ddd
+			border-bottom: 1px solid $blue
 			margin-bottom: $spacing
 			.headline
 				font-size: 1em
@@ -251,14 +251,6 @@
 				text-align: center
 				line-height: 2em
 				margin-bottom: 2em
-.product-tab
-	padding-top: $spacing
-	+make-sm-column(12)
-	.product-description
-		font-size: 0.8em
-		h3
-			font-size: 1.8em
-			font-weight: 300
 .product-recommended
 	.item 
 		+make-sm-column(2,10)	
@@ -270,8 +262,49 @@
 	filter: blur(2px)
 	opacity: 0.5
 
-// +keyframes(variantAnimation)
-// 	0% 
-// 		opacity: 0  
-// 	100% 
-// 		opacity: 1
+// Product Tabs
+.product-tab-header
+	+make-sm-column(12)
+	margin-top: $spacing*2
+	ul
+		+h-nav
+		border-bottom: 1px solid $blue
+		a
+			color: #000
+			font-size: 0.8em
+			line-height: 2em
+			display: inline-block
+			font-weight: 700
+			text-transform: uppercase
+			&:after
+				content: "/"
+				margin-left: 5px
+				margin-right: 5px
+				font-weight: 400
+				color: $red
+			&:hover
+				color: $blue
+			&.active
+				color: $blue	
+.product-tab-content
+	padding-top: $spacing	
+	+make-sm-column(12)
+	+clearfix	
+	
+	.product-description
+		padding-top: 4em
+		max-width: 75%
+		margin: 0 auto
+		font-size: 0.8em
+		h3
+			font-size: 1.8em
+			font-weight: 300
+		.inline-element
+			margin: 2em
+			margin-top: 1em
+			&:nth-of-type(2n+1)
+				margin-left: -4em
+				float: left
+			&:nth-of-type(2n+2)
+				margin-right: -4em
+				float: right
