@@ -151,12 +151,13 @@
 		.tooltip-variant-disabled
 			display: none	
 .extras
+	padding-top: $spacing
 	li
 		max-width: 20%
 		padding-right: $spacing
 	ul
 		+h-nav
-		display: none
+		
 	p
 		margin-top: 0.5em
 		font-weight: 400
@@ -252,8 +253,11 @@
 				line-height: 2em
 				margin-bottom: 2em
 .product-recommended
-	.item 
-		+make-sm-column(2,10)	
+	+make-sm-column(12)
+	.product-list
+		+make-row
+		.item 
+			+make-sm-column(2)	
 .effect-hover	
 	-webkit-filter: blur(2px)
 	-moz-filter: blur(2px)
@@ -284,9 +288,10 @@
 				color: $red
 			&:hover
 				color: $blue
-			&.active
+		li.active
+			a				
 				color: $blue	
-.product-tab-content
+.tab-content
 	padding-top: $spacing	
 	+make-sm-column(12)
 	+clearfix	
@@ -308,3 +313,29 @@
 			&:nth-of-type(2n+2)
 				margin-right: -4em
 				float: right
+
+.tab-content
+	.tab-pane 
+		display: none
+		visibility: hidden
+	.active 
+		display: block
+		visibility: visible
+.comment-block	
+	+clearfix
+	a
+		display: inline-block
+		color: #000
+		// text-decoration: underline
+		font-size: 0.8em
+		padding: 0 0.5em
+		font-style: italic
+	.write-review:after
+		font-family: "FontAwesome"
+		content: "\f0e5"
+		margin-left: 0.5em	
+	.rating-block
+		+clearfix
+		display: inline-block
+		img
+			float: left		
