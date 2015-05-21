@@ -1,12 +1,12 @@
 extend jade.resources/layout/master
 
-block content	
+block content
 	.container.wrapper
-		.category-page			
+		.category-page
 			.category-banner
 				a(href='#')
 					img(src='http://placehold.it/1500x300/FAFAFA/000000')
-			include jade.resources/partials/breadcrumbs.jade		
+			include jade.resources/partials/breadcrumbs.jade
 			h1.block-header.category-header Women clothing
 			.aside-category.filter-vertical
 				p.block-header.filter-header Filter
@@ -30,14 +30,14 @@ block content
 								li
 									a(href='#' style='background-color:#{color}') #{color}
 					li.filter-item.summerwear
-						p.filter-title Summer Wear 
+						p.filter-title Summer Wear
 						ul
 							for brand in brands.brands
 								li
 									a(href='#') #{brand}
-					li																		
+					li
 						a(href="#" class='cancel-filters') Cancel filters
-			.main		
+			.main
 				.sort-block
 					p 30 Products Found
 					.view
@@ -55,12 +55,12 @@ block content
 							li
 								a(href='#') 4
 							li
-								a(href='#') Next		
+								a(href='#') Next
 					.sort
 						select(class='form-control')
 							each sortItem, i in sort.sort
-								option(value=i) #{sortItem}								
-				.product-list					
+								option(value=i) #{sortItem}
+				.product-list
 					+product-list(32)
 				.sort-block
 					p 30 Products Found
@@ -79,8 +79,8 @@ block content
 							li
 								a(href='#') 4
 							li
-								a(href='#') Next		
+								a(href='#') Next
 					.sort
 						select(class='form-control')
 							each sortItem, i in sort.sort
-								option(value=i) #{sortItem}		
+								option(value=i) #{sortItem}
